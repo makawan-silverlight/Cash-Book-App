@@ -1,0 +1,27 @@
+GET http://localhost:3001/transaction HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST http://localhost:3001/transaction HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "งานเสริม",
+    "amount" : 2000
+}
+
+###
+
+PUT http://localhost:3001/transaction/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title" : "ค่าทรายแมว",
+    "amount" : -300
+}
+
+###
+
+DELETE http://localhost:3001/transaction/1 HTTP/1.1
+Content-Type: application/json
