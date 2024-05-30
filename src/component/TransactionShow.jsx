@@ -1,9 +1,11 @@
 import TransactionEdit from "./TransactionEdit"
-import { useState } from "react"
+import { useState,useContext } from "react"
+import AppContext from "../context/AppContext"
 
-function TransactionShow ( { data,id,onDelete,onEdit } ) {
+function TransactionShow ( { data,id } ) {
 
     const [edit,setEdit] = useState(false);
+    const { onDelete } = useContext(AppContext);
 
     const dataElement = (
             <>
@@ -12,7 +14,7 @@ function TransactionShow ( { data,id,onDelete,onEdit } ) {
             </>
     )
 
-    const dataEdit = (<TransactionEdit data={data} onEdit={onEdit} closeEdit={closeEdit} />)
+    const dataEdit = (<TransactionEdit data={data} closeEdit={closeEdit} />)
 
     function handleOnClick (){
         setEdit(!edit)

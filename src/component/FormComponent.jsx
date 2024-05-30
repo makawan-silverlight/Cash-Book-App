@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
+import AppContext from "../context/AppContext";
 
-function FormComponent ( { onCreate } ) {
+function FormComponent () {
 
     const [title,setTitle] = useState('');
     const [amount,setAmount] = useState('');
+    const { onCreate } = useContext(AppContext);
 
     function handleOnChangeTitle(event){
         setTitle(event.target.value);

@@ -1,16 +1,17 @@
-import { useState } from "react"
+import { useState,useContext } from "react"
+import AppContext from "../context/AppContext"
+function TransactionEdit ( { data,closeEdit } ) {
 
-function TransactionEdit ( { data,onEdit,closeEdit } ) {
-
-    const [title,setTitle] = useState(data.title)
-    const [amount,setAmount] = useState(data.amount)
+    const [title,setTitle] = useState(data.title);
+    const [amount,setAmount] = useState(data.amount);
+    const { onEditSubmit } = useContext(AppContext);
 
     function handleOnSubmit(event){
         event.preventDefault();
         if(title === '' || amount === '' || amount === 0){
             alert("กรุณากรอกข้อมูลให้ครบถ้วน")
         }else{
-            onEdit(data.id,title,amount);
+            onEditSubmit(data.id,title,amount);
             closeEdit();
         }
     }
