@@ -1,9 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useState ,useEffect } from "react";
 
 const AppContext = createContext();
 
 function Provider ({ children }) {
-    const [data,setData] = useState([]);
+    const [data,setData] = useState(() => {
+      const transactionLocalStorage = localStorage.getItem('transaction');
+      if(transactionLocalStorage){
+        return JSON.parse(transactionLocalStorage);
+      }
+      return [];
+    });
+
+    useEffect(() => {
+      localStorage.setItem('transaction', JSON.stringify(data));
+    },[data])
 
     const valueToShare = {
         data,
