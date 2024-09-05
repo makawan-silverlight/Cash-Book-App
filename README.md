@@ -1,8 +1,14 @@
-# React + Vite
+# Cash Book App 
+-Transaction App CRUD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+create website using:
+- React JS (vite)
+- React Hook (useState,uesEffect,useContext)
+- Local Storage
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### DEMO
+- Live Site URL: [https://cash-book-app.vercel.app/](https://cash-book-app.vercel.app/)
+
+### Screenshot
+![image](https://github.com/user-attachments/assets/296fabe3-806c-4b6b-80d7-bddd99fd1f16)
